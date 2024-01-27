@@ -2,8 +2,6 @@
 
 | **Licence**  | [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  |
 |---|---|
-| **Deploy status**  |  [![Netlify Status](https://api.netlify.com/api/v1/badges/d0268492-3c13-4c56-aa3d-6c40adadfd0f/deploy-status)](https://app.netlify.com/sites/adityagundecha/deploys) |
-
 
 A website to showcase DevOps professional portfolio
 # Project Title
@@ -14,32 +12,34 @@ A personal prject to create a portfolio website for a DevOps Engineer
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 See deployment for notes on how to deploy the project on a live system.
-To get started clone the repository and start coding. Continuous Delivery is implemented using __Github Actions__ and __Netlify__ Wbhook
+To get started clone the repository and start coding.
 
-### Prerequisites
+install nginx
+sudo apt-get install nginx
 
-- VS Code or any other editor. (Few that I recommend are Vim, Sublime Text, Notepad++ )
-- Live Server extension for VS Code
-- Git lens for VS Code
+clone repository and make changes
+git clone  https://github.com/salvathshaik/salwad-basha-portfolio.git
 
+copy all static files to /html folder
+sudo cp -pr * /var/www/html/
 
-End with an example of getting some data out of the system or using it for a little demo
+Now you can access your portfolio
 
+Optional!!!!!!
+If you want enable HTTPS for your portfolio website 
 
-## Deployment
+apt update
+apt dist-upgrade
+apt-get install certbot pytho3-certbot-nginx
+certbot --nginx -d <your http website without http mentioned> ex: salwadbashashaik.cloud
+systemctl restart nginx
 
-Deployment is done via [Netlify](https://www.netlify.com/).
+if you want to deploy into apache and enable HTTPS, follow
+apt-get install apache2
+sudo cp -pr * /var/www/html/
+apt-get install python3-certbot-apache
+certbot --apache -d salwadbashashaik.cloud
 
-## Authors
+Note: make sure you have enabled the required ports in your cloud provider security group.
 
-* **Aditya Gundecha** - *Initial work* 
-
-## License
-
-This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Thank you !!!!!!!!!!
