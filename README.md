@@ -30,7 +30,10 @@ If you want enable HTTPS for your portfolio website
 
 apt update
 apt dist-upgrade
-apt-get install certbot pytho3-certbot-nginx
+sudo add-apt-repository universe
+sudo apt-get update
+apt-get install certbot
+apt-get install pytho3-certbot-nginx
 certbot --nginx -d <your http website without http mentioned> ex: salwadbashashaik.cloud
 systemctl restart nginx
 
